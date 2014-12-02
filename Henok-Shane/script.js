@@ -24,4 +24,7 @@ function validate() {
   }
 }
 
-
+function newComment () {
+  var comment = document.getElementById("comment").value;
+  document.write (<p>comment</p>)
+}
