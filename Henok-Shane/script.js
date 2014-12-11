@@ -24,7 +24,16 @@ function validate() {
   }
 }
 
-function newComment () {
-  var comment = document.getElementById("comment").value;
-  document.write (<p>comment</p>)
-}
+$(function() {
+
+  var $newCommentForm = $('#newCommentForm');
+  var $textInput = $('input:text');
+
+  $newCommentForm.on('submit', function(event){
+    var newText = $('input:text').val();
+    $('section:first').prepend('<div><p>' + newText + '</p></div>');
+    $textInput.val('');
+    event.preventDefault();
+  });
+
+});
